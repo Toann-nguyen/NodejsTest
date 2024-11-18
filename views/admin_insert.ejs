@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" style="margin: 0; padding: 0;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/public/stylesheets/styles.css">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 50%;
+            margin: auto;
+            background-color: #FFFFCC;
+            border-collapse: collapse;
+            padding: 10px;
+            border: 1px black solid;
+        }
+        fieldset{
+            text-align: center;
+        }
+        tr {
+            border: 1px black solid;
+        }
+        th {
+            border: 1px black solid;
+            text-align: center;
+            font-size: 24px;
+            padding: 10px;
+        }
+        td {
+            border: 1px black solid;
+            padding: 5px;
+        }
+        input[type="text"], select, textarea {
+            width: 97%;
+            padding: 5px;
+            margin: 5px 0;
+        }
+        .options {
+            display: flex;
+            gap: 10px;
+        }
+        .submit-btn {
+            text-align: center;
+            padding: 10px;
+        }
+        input[type="submit"] {
+            padding: 8px 16px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body style="margin: 0; padding: 0;">
+    <form action="/api/insert" method="post" class="form_mat">
+        <table align="center">
+            <p align="center">Phiếu đăng ký tham gia chương trình khuyến mãi</p>
+            <tr>
+                <td>Họ và Tên</td>
+                <td><input class="input_mat" type="text" name="HOTEN" placeholder="" required></td>
+            </tr>
+            <tr>
+                <td>Địa chỉ</td>
+                <td><input class="input_mat" type="text" name="DIACHI" placeholder="" required></td>
+            </tr>
+            <tr>
+                <td>Điện thoại</td>
+                <td><input class="input_mat" type="number" name="PHONE" placeholder="" required></td>
+            </tr>
+            <tr>
+                <td>Phái</td>
+                <td>
+                    <input class="input_mat" type="radio" name="PHAI" value="Nam"> Nam
+                    <input class="input_mat" type="radio" name="PHAI" value="Nữ"> Nữ
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input class="input_mat" type="email" name="EMAIL" placeholder="Nhập email của bạn" required></td>
+            </tr>
+            <tr>
+                <td>Ảnh</td>
+                <td><input class="input_mat" type="file" name="ANH" accept="image/*"></td>
+            </tr>
+            <tr>
+                <td>Nghề nghiệp</td>
+                <td>
+                    <select id="occupation" name="NGHENGHIEP">
+                        <option value="Giáo viên">Giáo viên</option>
+                        <option value="Bác sĩ">Bác sĩ</option>
+                        <option value="Kỹ sư">Kỹ sư</option>
+                        <option value="Khác">Khác</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Chọn sản phẩm</td>
+                <td>
+                    <select id="product" name="CHONSANPHAM" multiple size="4">
+                        <option value="Kem đánh răng">Kem đánh răng</option>
+                        <option value="Bột giặt">Bột giặt</option>
+                        <option value="Dầu gội đầu">Dầu gội đầu</option>
+                        <option value="Sữa tắm">Sữa tắm</option>
+                    </select>
+            </tr>
+            <tr>
+                <td>Số người dự tham gia</td>
+                <td><input class="input_mat" type="text" name="SONGUOIDUTHAMGIA" placeholder="" required></td>
+            </tr>
+            <tr>
+                <td align="center"><input type="submit" name="submit" value="Đồng ý"></td>
+                <td> <a href="/admin_select">Thong tin dang ky</a></td>
+            </tr>
+
+        </table>
+
+    </form>
+</body>
+
+</html>

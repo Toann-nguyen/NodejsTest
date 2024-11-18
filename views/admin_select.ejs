@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" style="margin: 0; padding: 0;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/stylesheets/tailwind.css">
+    <title>Document</title>
+    <style>
+        .sidebar {
+            position: absolute;
+            top: 0;
+            width: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            height: 920px;
+            background-color: gray;
+        }
+
+        .sidebar-li {
+            text-decoration: none;
+            list-style-type: none;
+        }
+
+        .btn_li {
+            width: 100%;
+        }
+
+        .h3_li {
+            margin: 0;
+            width: 100%;
+            padding: 10px 0px;
+            height: 20px;
+            background-color: aliceblue;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .btn-active-on {
+            background-color: black;
+            color: aliceblue;
+        }
+
+        .form_mat {
+            margin: 0px 20px 0px 220px;
+        }
+    </style>
+</head>
+
+<body style="margin: 0; padding: 0;">
+
+    <a href="/">Quay lai trang dang ky</a>
+    <table border="1" align="center" class="form_mat">
+        <p align="center"></p>
+        <tr align="center">
+            <th>Họ tên</th>
+            <th>Địa chỉ</th>
+            <th>Điện Thoại</th>
+            <th>Phái</th>
+            <th>Nghề nghiệp</th>
+            <th>Chọn sản phẩm</th>
+            <th>Số người dự tham gia</th>
+            
+            
+            <th colspan="2">Option</th>
+        </tr>
+        <% for (const user of user_regis) { %>
+            <tr>
+                <td class="id">
+                    <%=user.HOTEN%>
+                </td>
+                <td>
+                    <%=user.DIACHI%>
+                </td>
+                <td>
+                    <%=user.PHONE%>
+                </td>
+                <td>
+                    <%=user.PHAI%>
+                </td>
+                <td>
+                    <%=user.EMAIL%>
+                </td>
+                <td>
+                    <%=user.NGHENGHIEP%>
+                </td>
+                <td>
+                    <%=user.CHONSANPHAM%>
+                </td>
+                <td>
+                    <%=user.SONGUOIDUTHAMGIA%>
+                </td> 
+                <td>
+                    <a href="/delete/<%=user._id%>">Delete</a>
+                </td>
+                <td>
+                    <a href="/update/<%=user._id%>">Update</a>
+                </td>
+            </tr>
+            <%} %>
+    </table>
+</body>
+
+</html>
