@@ -20,7 +20,8 @@ async function main() {
   app.use(bodyParser.json({ type: 'application/json' }))
   app.use(bodyParser.raw());
 
-
+// xu hien thi anh 
+app.use('/images', express.static('public/images'))
 
   const server = app.listen(8000, () => { console.log("Server run port 8000") })
 
